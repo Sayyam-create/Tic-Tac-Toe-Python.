@@ -1,0 +1,49 @@
+# Tic-Tac-Toe-Python.
+Project
+
+cur_player = player1
+player_choice = {'X' : "", 'O' : ""}
+options = ['X', 'O']
+score_board = {player1: 0, player2: 0}
+def print_scoreboard(score_board):
+    print("--------------------------------")
+    print("            SCOREBOARD       ")
+    print("--------------------------------")
+ 
+    players = list(score_board.keys())
+    print("   ", players[0], "    ", score_board[players[0]])
+    print("   ", players[1], "    ", score_board[players[1]])
+ 
+    print("--------------------------------\n")
+    while True:
+      print("Turn to choose for", cur_player)
+      print("Enter 1 for X")
+      print("Enter 2 for O")
+      print("Enter 3 to Quit")
+      try:
+    choice = int(input())   
+except ValueError:
+    print("Wrong Input!!! Try Again\n")
+    continue
+if choice == 1:
+    player_choice['X'] = cur_player
+    if cur_player == player1:
+        player_choice['O'] = player2
+    else:
+        player_choice['O'] = player1
+ 
+elif choice == 2:
+    player_choice['O'] = cur_player
+    if cur_player == player1:
+        player_choice['X'] = player2
+    else:
+        player_choice['X'] = player1
+         
+elif choice == 3:
+    print("Final Scores")
+    print_scoreboard(score_board)
+    break  
+ 
+else:
+    print("Wrong Choice!!!! Try Again\n")
+
